@@ -20,7 +20,7 @@ class DataRead(object):
 
     inputs = {'train': None, 'test': None, 'validation': None}
     targets = {'train': None, 'test': None, 'validation': None}
-    repo_path = r'E:\ImageProcess\Mnist'
+    repo_path = r'E:\BlitzImage\Mnist'
 
     num_test_sample = 10000
     num_train = 60000  # this is very important, at present you must set it manually
@@ -68,7 +68,7 @@ class DataRead(object):
             self.heights = cols
             if magic != 2051:
                 raise ValueError('invalid MNIST image file: ' + fname)
-              print np.fromfile(f, dtype='uint8').shape
+
             full_image = np.fromfile(f, dtype='uint8').reshape((num_images, rows * cols))  # reshape函数返回一个新数组，但原数组本身不变；resize在返回一个新数组的同时也改变原数组本身
             if dtype is not None:
                 dtype = np.dtype(dtype)
